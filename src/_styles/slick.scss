@@ -1,0 +1,15 @@
+.slick-slider,
+.slick-arrow,
+.slick-prev:before,
+.slick-next:before {
+    color: currentColor;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+    color: currentColor;
+    // outline: none;
+    // background: transparent;
+}

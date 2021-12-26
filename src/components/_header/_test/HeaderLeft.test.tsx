@@ -3,7 +3,6 @@ import * as React from 'react';
 import { render, fireEvent, cleanup, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 //
-import HeaderLeft from '../left/_main/HeaderLeft';
 import Header from '../_main/Header';
 
 //
@@ -19,8 +18,9 @@ describe('Header', () => {
 
         // fireEvent.click(btn);
 
-        expect(btn_left).toBeInTheDocument();
-        expect(btn_right).toBeInTheDocument();
+        // expect(btn_left).toBeInTheDocument();
+        // expect(btn_right).toBeInTheDocument();
+        expect(btn_right.textContent).toEqual('Btn mui 1')
 
         fireEvent.click(btn_left)
 
