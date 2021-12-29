@@ -27,12 +27,12 @@ function AppSlick({}: AppSlickProps) {
 
     //
     function beforeChange(currentSlide: number, nextSlide: number) {
-        console.log('before: ', currentSlide, ', after: ', nextSlide);
+        // console.log('before: ', currentSlide, ', after: ', nextSlide);
     }
 
     //
     function afterChange(index: number) {
-        console.log('after: ', index);
+        // console.log('after: ', index);
     }
 
     //

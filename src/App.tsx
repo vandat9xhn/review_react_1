@@ -11,6 +11,8 @@ import './_styles/slick.scss';
 //
 import Header from './components/_header/_main/Header';
 import AppSlick from './components/slick/_main/Slick';
+import InputPlaceHolderOnTop from './components/inpput/placeholder_on_top/_main/InputPlaceHolderOnTop';
+// import GGMap from './components/gg_map/_main/GGMap';
 
 //
 interface AppProps {}
@@ -28,7 +30,9 @@ const App: React.FunctionComponent<AppProps> = () => {
                     <AppSlick />
                 </div>
 
-                <div></div>
+                <div className="mt-4">
+                    <InputPlaceHolderOnTop />
+                </div>
             </div>
         </ThemeProvider>
     );

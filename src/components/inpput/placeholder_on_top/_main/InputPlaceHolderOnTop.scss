@@ -1,0 +1,73 @@
+.InputPlaceHolderOnTop {
+    margin: auto;
+    width: fit-content;
+    padding: 60px;
+    background-image: linear-gradient(
+        45deg,
+        rgb(252, 222, 166),
+        rgb(228, 24, 211)
+    );
+}
+
+.InputPlaceHolderOnTop_contain-active {
+    .InputPlaceHolderOnTop_placeholder {
+        top: 0;
+        left: 0.75rem;
+        font-size: 12px;
+    }
+
+    .InputPlaceHolderOnTop_fake_part {
+        border-color: rgb(16, 112, 238);
+    }
+    .InputPlaceHolderOnTop_fake_center {
+        border-top-color: transparent;
+    }
+}
+
+.InputPlaceHolderOnTop_input {
+    padding: 0.5rem;
+    outline: none;
+    background-color: transparent;
+}
+
+.InputPlaceHolderOnTop_placeholder {
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: all 200ms ease-in;
+}
+
+.InputPlaceHolderOnTop_fake {
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+}
+// .
+.InputPlaceHolderOnTop_fake_part {
+    border-color: rgb(77, 77, 77);
+}
+.InputPlaceHolderOnTop_fake_left {
+    width: 0.5rem;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.InputPlaceHolderOnTop_fake_center {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+
+    transition: border-top-color 100ms ease-in;
+}
+.InputPlaceHolderOnTop_fake_right {
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
