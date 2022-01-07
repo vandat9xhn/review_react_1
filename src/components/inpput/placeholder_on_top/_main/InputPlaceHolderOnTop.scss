@@ -36,6 +36,7 @@
     transform: translateY(-50%);
 
     transition: all 200ms ease-in;
+    pointer-events: none;
 }
 
 .InputPlaceHolderOnTop_fake {

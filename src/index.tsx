@@ -1,15 +1,19 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-// 
+
+import { RecoilRoot } from 'recoil';
+//
 import App from './App';
 
-// 
+//
 ReactDOM.render(
-  // <Provider store={store}>
-    <App />,
-  // </Provider>,
-  document.getElementById('root'),
+    // <Provider store={store}>
+    <RecoilRoot>
+        <App />
+    </RecoilRoot>,
+    // </Provider>,
+    document.getElementById('root')
 );
 
-serviceWorker.unregister()
+serviceWorker.unregister();

@@ -1,5 +1,6 @@
 import * as React from 'react';
 //
+import styles from './InputPlaceHolderOnTop.module.css';
 import './InputPlaceHolderOnTop.scss';
 
 //
@@ -15,6 +16,11 @@ function InputPlaceHolderOnTop({}: InputPlaceHolderOnTopProps) {
     //
     const ref_placeholder = React.useRef(null);
     const ref_fake_center = React.useRef(null);
+
+    //
+    React.useEffect(() => {
+        console.log(styles);
+    }, []);
 
     //
     React.useEffect(() => {
