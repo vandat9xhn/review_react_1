@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material';
 //
 import { theme } from './_theme/theme';
@@ -10,11 +11,7 @@ import './_styles/tailwind_output.css';
 import './_styles/slick.scss';
 //
 import Header from './components/_header/_main/Header';
-import AppSlick from './components/slick/_main/Slick';
-import InputPlaceHolderOnTop from './components/inpput/placeholder_on_top/_main/InputPlaceHolderOnTop';
-import BrickAndBall from './components/ball_and_brick/_main/BrickAndBall';
-import MyRecoilInput from './components/my_recoil/input/MyRecoilInput';
-// import GGMap from './components/gg_map/_main/GGMap';
+import Home from './pages/home/_main/Home';
 
 //
 interface AppProps {}
@@ -23,27 +20,20 @@ interface AppProps {}
 const App: React.FunctionComponent<AppProps> = () => {
     return (
         <ThemeProvider theme={theme}>
-            <div>
+            <BrowserRouter>
                 <div>
-                    <Header />
-                </div>
+                    <div>
+                        <Header />
+                    </div>
 
-                <div className="mt-4">
-                    <AppSlick />
+                    <Routes>
+                        <Route path="/home/*" element={<Home />}>
+                            <Route path="1" element={<div>111111111111111</div>} />
+                            <Route path="2" element={<div>222222222222222</div>} />
+                        </Route>
+                    </Routes>
                 </div>
-
-                <div className="mt-4">
-                    <InputPlaceHolderOnTop />
-                </div>
-
-                <div className="mt-4">
-                    <BrickAndBall />
-                </div>
-
-                <div className="mt-4">
-                    <MyRecoilInput />
-                </div>
-            </div>
+            </BrowserRouter>
         </ThemeProvider>
     );
 };
