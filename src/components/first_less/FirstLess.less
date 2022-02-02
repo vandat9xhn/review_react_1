@@ -1,0 +1,43 @@
+@btn-h: 36px;
+@btn-color: white;
+
+// -----
+
+.flex-between-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brs(@btn-brs) {
+    border-radius: @btn-brs;
+}
+
+// -----
+
+.FirstLess {
+    margin: auto;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.FirstLess_row {
+    .flex-between-center;
+
+    .FirstLess_btn {
+        height: @btn-h + 1 - 1;
+        padding: 0 12px;
+        .brs(8px);
+        background-color: rgb(17, 72, 253);
+
+        color: @btn-color;
+        font-weight: 600;
+
+        &:hover {
+            background-color: rgb(39, 89, 252);
+        }
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}

@@ -98,8 +98,14 @@ const config = {
                             sourceMap: true,
                         },
                     },
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
                 ],
-                test: /\.(c|sa|sc)ss$/,
+                test: /\.(c|sa|sc|le)ss$/,
             },
 
             //

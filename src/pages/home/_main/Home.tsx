@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Routes, Route, Outlet, useNavigate } from 'react-router-dom';
 //
 import BrickAndBall from '../../../components/ball_and_brick/_main/BrickAndBall';
+import FirstLess from '../../../components/first_less/FirstLess';
 import InputPlaceHolderOnTop from '../../../components/inpput/placeholder_on_top/_main/InputPlaceHolderOnTop';
 import MyRecoilInput from '../../../components/my_recoil/input/MyRecoilInput';
 import AppSlick from '../../../components/slick/_main/Slick';
@@ -64,6 +65,10 @@ function Home({}: HomeProps) {
 
             <div className="mt-4">
                 <MyRecoilInput />
+            </div>
+
+            <div className="mt-4">
+                <FirstLess />
             </div>
         </div>
     );
