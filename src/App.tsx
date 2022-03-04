@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import './_styles/tailwind_output.css';
 import './_styles/slick.scss';
+import './_styles/App.scss';
 //
 import Header from './components/_header/_main/Header';
 import Home from './pages/home/_main/Home';
@@ -28,8 +29,14 @@ const App: React.FunctionComponent<AppProps> = () => {
 
                     <Routes>
                         <Route path="/home/*" element={<Home />}>
-                            <Route path="1" element={<div>111111111111111</div>} />
-                            <Route path="2" element={<div>222222222222222</div>} />
+                            <Route
+                                path="1"
+                                element={<div>111111111111111</div>}
+                            />
+                            <Route
+                                path="2"
+                                element={<div>222222222222222</div>}
+                            />
                         </Route>
                     </Routes>
                 </div>

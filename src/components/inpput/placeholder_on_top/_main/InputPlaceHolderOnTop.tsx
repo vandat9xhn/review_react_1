@@ -18,9 +18,9 @@ function InputPlaceHolderOnTop({}: InputPlaceHolderOnTopProps) {
     const ref_fake_center = React.useRef(null);
 
     //
-    React.useEffect(() => {
-        console.log(styles);
-    }, []);
+    // React.useEffect(() => {
+    //     console.log(styles);
+    // }, []);
 
     //
     React.useEffect(() => {
