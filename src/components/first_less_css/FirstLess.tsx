@@ -16,6 +16,8 @@ function FirstLess({}: FirstLessProps) {
 
     //
     function handleClick() {
+        console.log(1);
+        
         alert(`Length of input text: ${ip_recoil_length}`);
     }
 
