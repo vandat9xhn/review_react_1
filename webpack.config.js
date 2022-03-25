@@ -11,7 +11,7 @@ const VENDOR_LIBS = [
     'react-dom',
     'react-router-dom',
     'axios',
-    'redux',
+    // 'redux',
     // 'react-redux',
     // 'redux-thunk',
     // 'redux-saga',

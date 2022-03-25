@@ -4,7 +4,10 @@ import { Routes, Route, Outlet, useNavigate } from 'react-router-dom';
 //
 import BrickAndBall from '../../../components/ball_and_brick/_main/BrickAndBall';
 import MyChartBar from '../../../components/chart/bar/MyChartBar';
+import FBLogin from '../../../components/fb/_main/FBLogin';
+import FileUpload from '../../../components/file_upload/FileUpload';
 import FirstLess from '../../../components/first_less_css/FirstLess';
+import MyGoogleLogin from '../../../components/gg_login/MyGoogleLogin';
 import HoverScaleImg from '../../../components/hover_scale_img/HoverScaleImg';
 import InputPlaceHolderOnTop from '../../../components/inpput/placeholder_on_top/_main/InputPlaceHolderOnTop';
 import MyRecoilInput from '../../../components/my_recoil/input/MyRecoilInput';
@@ -78,11 +81,24 @@ function Home({}: HomeProps) {
                 <HoverScaleImg />
             </div>
 
-            <div className="mt-4">
+            {/* <div className="mt-4">
                 <MyChartBar />
+            </div> */}
+
+            {/* <div className="mt-4">
+                <FBLogin />
+            </div> */}
+
+            {/* <div className="mt-4">
+                <MyGoogleLogin />
+            </div> */}
+
+            <div className="mt-4">
+                <FileUpload />
             </div>
 
-            <div className="mt-4"></div>
+            <div className="mt-4">
+            </div>
         </div>
     );
 }
