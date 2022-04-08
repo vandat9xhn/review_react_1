@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Routes, Route, Outlet, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 //
 import BrickAndBall from '../../../components/ball_and_brick/_main/BrickAndBall';
 import MyChartBar from '../../../components/chart/bar/MyChartBar';
@@ -13,6 +14,7 @@ import InputPlaceHolderOnTop from '../../../components/inpput/placeholder_on_top
 import MyRecoilInput from '../../../components/my_recoil/input/MyRecoilInput';
 import AppSlick from '../../../components/slick/_main/Slick';
 import HomeCacheAPI from '../cache_api/HomeCacheAPI';
+import SliderCanvas from '../../../components/slider_canvas/SliderCanvas';
 
 //
 export interface HomeProps {}
@@ -32,6 +34,10 @@ function Home({}: HomeProps) {
     //
     return (
         <div className="Home">
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
+
             <div className="mt-4">
                 <AppSlick />
             </div>
@@ -98,7 +104,10 @@ function Home({}: HomeProps) {
             </div>
 
             <div className="mt-4">
+                <SliderCanvas />
             </div>
+
+            <div className="mt-4"></div>
         </div>
     );
 }

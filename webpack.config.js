@@ -29,7 +29,6 @@ const devServer = {
     compress: true,
     contentBase: '/',
     // https: true,
-    
 };
 
 //
@@ -92,12 +91,7 @@ const config = {
                             sourceMap: true,
                         },
                     },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
+
                     {
                         loader: 'less-loader',
                         options: {
@@ -105,7 +99,25 @@ const config = {
                         },
                     },
                 ],
-                test: /\.(c|sa|sc|le)ss$/,
+                test: /\.(c|le)ss$/,
+            },
+            {
+                use: [
+                    is_prod ? MiniCssExtractPlugin.loader : 'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                ],
+                test: /\.(sa|sc)ss$/,
             },
 
             //

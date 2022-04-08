@@ -22,11 +22,11 @@ function Header({}: HeaderProps) {
     return (
         <div className="Header p-2">
             <div className="flex flex-row justify-between items-center">
-                <div className='Header_left'>
+                <div className="Header_left">
                     <HeaderLeft count={count} handleClick={countUp} />
                 </div>
 
-                <div className='Header_right' >
+                <div className="Header_right">
                     <HeaderRight count={count} />
                 </div>
             </div>
