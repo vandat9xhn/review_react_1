@@ -1,0 +1,150 @@
+.StepCircle_row {
+    display: flex;
+    justify-content: center;
+}
+
+// ---- LEFT
+.StepCircle_left {
+    width: 300px;
+    height: 300px;
+    padding: 25px;
+}
+
+.StepCircle_left_contain {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.StepCircle_circle {
+    width: 100%;
+    height: 100%;
+    stroke-dasharray: 1000 1000;
+    stroke-dashoffset: -150;
+    transform: rotate(-125deg);
+    animation: circle_start 250ms forwards ease-in;
+}
+
+// SLIDERS
+.StepCircle_sliders {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 250ms ease-in;
+}
+// .
+.StepCircle_slider {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0px;
+}
+// ..
+.StepCircle_slider_contain {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 250ms ease-in;
+}
+// ...
+.StepCircle_slider_circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: gray;
+
+    cursor: pointer;
+}
+.StepCircle_slider_circle-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    background-color: rgb(63, 63, 252);
+
+    font-weight: 600;
+    color: white;
+}
+
+.StepCircle_connect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform: rotate(-45deg);
+}
+// .
+.StepCircle_connect_contain {
+    position: absolute;
+    left: calc(100% + 15px);
+    top: 50%;
+
+    width: 75px;
+    height: 50px;
+    overflow: hidden;
+    transform: translateY(-50%);
+    transition: all 250ms ease-in;
+}
+.StepCircle_connect_contain-none {
+    width: 0;
+    opacity: 0;
+}
+// ..
+.StepCircle_connect_line_1 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 25px;
+    height: 1px;
+    background-color: grey;
+}
+// ..
+.StepCircle_connect_line_2 {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+
+    width: 0px;
+    height: 0px;
+    transform: rotate(45deg);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 100%;
+
+        width: 45px;
+        height: 1px;
+        background-color: grey;
+    }
+}
+
+// --- RIGHT
+.StepCircle_right {
+    width: 360px;
+    padding: 15px 30px;
+}
+
+.StepCircle_right_title {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+// ------
+
+@keyframes circle_start {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

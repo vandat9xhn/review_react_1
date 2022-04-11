@@ -15,6 +15,8 @@ import MyRecoilInput from '../../../components/my_recoil/input/MyRecoilInput';
 import AppSlick from '../../../components/slick/_main/Slick';
 import HomeCacheAPI from '../cache_api/HomeCacheAPI';
 import SliderCanvas from '../../../components/slider_canvas/SliderCanvas';
+import CircleLoading from '../../../components/file_upload/circle/CircleLoading';
+import StepCircle from '../../../components/step_circle/StepCircle';
 
 //
 export interface HomeProps {}
@@ -105,6 +107,14 @@ function Home({}: HomeProps) {
 
             <div className="mt-4">
                 <SliderCanvas />
+            </div>
+
+            <div className="mt-4">
+                <CircleLoading />
+            </div>
+
+            <div className="mt-4">
+                <StepCircle />
             </div>
 
             <div className="mt-4"></div>

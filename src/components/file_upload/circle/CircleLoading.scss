@@ -1,0 +1,58 @@
+.CircleLoading {
+    display: flex;
+    justify-content: center;
+}
+
+.CircleLoading_contain {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.CircleLoading_border {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    border: 6px solid #ccc;
+    border-radius: 50%;
+}
+
+.CircleLoading_svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(-180deg);
+
+    circle {
+        transition: stroke-dasharray 250ms linear;
+    }
+}
+
+.CircleLoading_slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transition: transform 250ms linear;
+}
+// .
+.CircleLoading_slider_circle {
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translate(-50%, -50%);
+
+    width: 20px;
+    height: 20px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background-color: #fff;
+}
