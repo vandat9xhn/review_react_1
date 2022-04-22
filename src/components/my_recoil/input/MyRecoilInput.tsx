@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 //
-import { recoilIpText } from '../_state/MyRecoilState';
+import { recoilIpText } from '../../../recoil/input/MyRecoilState';
 
 //
 export interface MyRecoilInputProps {}

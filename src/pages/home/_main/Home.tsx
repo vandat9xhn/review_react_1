@@ -17,6 +17,9 @@ import HomeCacheAPI from '../cache_api/HomeCacheAPI';
 import SliderCanvas from '../../../components/slider_canvas/SliderCanvas';
 import CircleLoading from '../../../components/file_upload/circle/CircleLoading';
 import StepCircle from '../../../components/step_circle/StepCircle';
+import MyGSAP from '../../../components/my_gsap/_main/MyGSAP';
+import MyStorage from '../../../components/storage/MyStorage';
+import MyRedux from '../../../components/my_redux/MyRedux';
 
 //
 export interface HomeProps {}
@@ -115,6 +118,18 @@ function Home({}: HomeProps) {
 
             <div className="mt-4">
                 <StepCircle />
+            </div>
+
+            <div className="mt-4">
+                <MyGSAP />
+            </div>
+
+            <div className="mt-4">
+                <MyStorage />
+            </div>
+
+            <div className="mt-4">
+                <MyRedux />
             </div>
 
             <div className="mt-4"></div>
