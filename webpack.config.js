@@ -133,6 +133,14 @@ const config = {
 
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
+        // fallback: {
+        //     os: false,
+        //     https: false,
+        //     http: false,
+        //     crypto: false,
+        //     assert: false,
+        //     stream: false,
+        // },
     },
 
     // plugins
@@ -167,6 +175,8 @@ const config = {
     devServer,
     // mode
     mode: is_prod ? 'production' : 'development',
+    //
+    // target: 'node',
 };
 
 module.exports = config;

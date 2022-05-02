@@ -9,5 +9,5 @@
       "moduleResolution": "Node",
       // "plugins": [{ "name": "typescript-plugin-css-modules" }]
     },
-    "exclude": ["node_modules", "**/*.spec.ts"],
+    "exclude": ["/node_modules", "**/*.spec.ts"],
   }

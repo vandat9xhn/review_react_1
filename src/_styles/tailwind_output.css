@@ -408,6 +408,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pointer-events-none {
   pointer-events: none;
 }
+.invisible {
+  visibility: hidden;
+}
 .absolute {
   position: absolute;
 }
@@ -510,6 +513,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .p-2 {
   padding: 0.5rem;
+}
+.p-\[20px\] {
+  padding: 20px;
 }
 .py-4 {
   padding-top: 1rem;

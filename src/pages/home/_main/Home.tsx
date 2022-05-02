@@ -20,6 +20,7 @@ import StepCircle from '../../../components/step_circle/StepCircle';
 import MyGSAP from '../../../components/my_gsap/_main/MyGSAP';
 import MyStorage from '../../../components/storage/MyStorage';
 import MyRedux from '../../../components/my_redux/MyRedux';
+import MyDapp from '../../../components/dapp/MyDapp';
 
 //
 export interface HomeProps {}
@@ -130,6 +131,10 @@ function Home({}: HomeProps) {
 
             <div className="mt-4">
                 <MyRedux />
+            </div>
+
+            <div className="mt-4">
+                {/* <MyDapp /> */}
             </div>
 
             <div className="mt-4"></div>

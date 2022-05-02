@@ -13,6 +13,7 @@ import './_styles/App.scss';
 //
 import Header from './components/_header/_main/Header';
 import Home from './pages/home/_main/Home';
+import MUI from './pages/mui/_main/MUI';
 
 //
 interface AppProps {}
@@ -38,6 +39,8 @@ const App: React.FunctionComponent<AppProps> = () => {
                                 element={<div>222222222222222</div>}
                             />
                         </Route>
+
+                        <Route path="/mui" element={<MUI />} />
                     </Routes>
                 </div>
             </BrowserRouter>
