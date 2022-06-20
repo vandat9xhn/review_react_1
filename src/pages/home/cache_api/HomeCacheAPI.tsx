@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from "react";
 //
-import { API_City_L } from '../../../_api/city/list';
-import { useCacheDataList } from '../../../_hooks/useDataCache';
+import { API_City_L } from "../../../_api/city/list";
+import { useCacheDataList } from "../../../_hooks/useDataCache";
 
 //
 export interface HomeCacheAPIProps {}
@@ -9,14 +9,15 @@ export interface HomeCacheAPIProps {}
 //
 function HomeCacheAPI({}: HomeCacheAPIProps) {
     //
-    const { data, getDataAPI } = useCacheDataList({
-        handle_get_API: getData_API_City,
-        key: 'home_cache',
-    });
+    // const { data, getDataAPI } = useCacheDataList({
+    //     handle_get_API: getData_API_City,
+    //     key: 'home_cache',
+    // });
 
     //
     React.useEffect(() => {
-        getDataAPI();
+        // getDataAPI();
+        console.log("home cache");
     }, []);
 
     // ----
@@ -27,7 +28,7 @@ function HomeCacheAPI({}: HomeCacheAPIProps) {
     }
 
     //
-    return <div></div>;
+    return <div>Home Cache</div>;
 }
 
 export default HomeCacheAPI;

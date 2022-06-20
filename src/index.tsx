@@ -1,12 +1,13 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import * as serviceWorker from './serviceWorker';
+import "regenerator-runtime/runtime";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import * as serviceWorker from "./serviceWorker";
 
-import { Provider } from 'react-redux';
-import { RecoilRoot } from 'recoil';
+import { Provider } from "react-redux";
+import { RecoilRoot } from "recoil";
 //
-import App from './App';
-import store from './redux';
+import App from "./App";
+import store from "./redux";
 
 //
 ReactDOM.render(
@@ -15,7 +16,7 @@ ReactDOM.render(
             <App />
         </RecoilRoot>
     </Provider>,
-    document.getElementById('root')
+    document.getElementById("root")
 );
 
 serviceWorker.unregister();

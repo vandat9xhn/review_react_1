@@ -1,26 +1,25 @@
-import 'regenerator-runtime/runtime';
-import axios from 'axios';
+import axios from "axios";
 
 //
 const csrftoken = () =>
     document.cookie &&
     document.cookie
-        .split(';')
-        .filter((str) => str.startsWith('csrftoken='))[0]
+        .split(";")
+        .filter((str) => str.startsWith("csrftoken="))[0]
         .slice(10);
 
 //
-const baseURL = '';
+const baseURL = "";
 axios.defaults.baseURL = baseURL;
 
 //
 const axiosClient = axios.create({
     headers: {
-        Accept: '*/*',
+        Accept: "*/*",
         // 'content-type': 'application/json',
-        'Content-Type':
-            'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW',
-        'X-CSRFToken': csrftoken(),
+        "Content-Type":
+            "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+        "X-CSRFToken": csrftoken(),
     },
 });
 

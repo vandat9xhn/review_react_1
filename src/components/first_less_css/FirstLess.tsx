@@ -6,6 +6,7 @@ import { charCountState } from '../../recoil/input/MyRecoilState';
 //
 import './FirstLess.less';
 
+import {} from 'multi-modals'
 //
 export interface FirstLessProps {}
 
