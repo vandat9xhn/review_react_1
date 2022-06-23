@@ -2,6 +2,7 @@ import * as React from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router";
 
 import { ContextApp } from "../context/app/contextApp";
+import CanvasPath2D from "../pages/cavas_path2d/CanvasPath2D";
 import HomeChild from "../pages/home/child/HomeChild";
 import HomeHasInput from "../pages/home/has_input/HomeHasInput";
 
@@ -30,7 +31,7 @@ function CustomRoutes({}: CustomRoutesProps) {
     }, [use_location, refHasInput.current]);
 
     // console.log(displayLocation);
-    
+
     // ----
 
     //
@@ -53,13 +54,11 @@ function CustomRoutes({}: CustomRoutesProps) {
                         </HomeChild>
                     }
                 />
-                {/* <Route path="1" element={<HomeChild num={1} />} />
-                <Route path="2" element={<HomeChild num={2} />} />
-                <Route path="3" element={<HomeChild num={3} />} />
-                <Route path="4" element={<HomeChild num={4} />} /> */}
             </Route>
 
             <Route path="/mui" element={<MUI />} />
+
+            <Route path="/canvas_path" element={<CanvasPath2D />} />
 
             <Route path="*" element={<Navigate to="/home/1" replace />} />
         </Routes>
