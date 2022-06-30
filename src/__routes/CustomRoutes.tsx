@@ -3,11 +3,13 @@ import { Navigate, Route, Routes, useLocation } from "react-router";
 
 import { ContextApp } from "../context/app/contextApp";
 import CanvasPath2D from "../pages/cavas_path2d/CanvasPath2D";
+import DndPg from "../pages/dnd/_main/DndPg";
 import HomeChild from "../pages/home/child/HomeChild";
 import HomeHasInput from "../pages/home/has_input/HomeHasInput";
 
 import Home from "../pages/home/_main/Home";
 import MUI from "../pages/mui/_main/MUI";
+import SvgAnimation from "../pages/svg_animation/SvgAnimation";
 
 //
 export interface CustomRoutesProps {}
@@ -57,8 +59,9 @@ function CustomRoutes({}: CustomRoutesProps) {
             </Route>
 
             <Route path="/mui" element={<MUI />} />
-
+            <Route path="/dnd" element={<DndPg />} />
             <Route path="/canvas_path" element={<CanvasPath2D />} />
+            <Route path="/svg_animation" element={<SvgAnimation />} />
 
             <Route path="*" element={<Navigate to="/home/1" replace />} />
         </Routes>

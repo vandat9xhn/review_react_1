@@ -1,7 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
+import { Link } from "react-router-dom";
 //
-import HeaderLeft from '../left/_main/HeaderLeft';
-import HeaderRight from '../right/_main/HeaderRight';
+import HeaderLeft from "../left/_main/HeaderLeft";
+import HeaderRight from "../right/_main/HeaderRight";
 
 //
 export interface HeaderProps {}
@@ -29,6 +30,10 @@ function Header({}: HeaderProps) {
                 <div className="Header_right">
                     <HeaderRight count={count} />
                 </div>
+            </div>
+
+            <div>
+                <Link to={"/"}>Home</Link>
             </div>
         </div>
     );

@@ -1,13 +1,13 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 //
 interface Btn36pxType {
-    height?: number;
+    height?: number | string;
     bg?: string;
 }
 
 export const Btn = styled.button<Btn36pxType>`
-    height: ${(props) => (props.height ? props.height : '36px')};
+    height: ${(props) => (props.height ? props.height : "36px")};
     padding: 0 16px;
     border-radius: 6px;
     background-color: ${(props) => props.bg};
