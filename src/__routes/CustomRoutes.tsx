@@ -8,6 +8,7 @@ import HomeChild from "../pages/home/child/HomeChild";
 import HomeHasInput from "../pages/home/has_input/HomeHasInput";
 
 import Home from "../pages/home/_main/Home";
+import Mobx from "../pages/mobx/_main/Mobx";
 import MUI from "../pages/mui/_main/MUI";
 import SvgAnimation from "../pages/svg_animation/SvgAnimation";
 
@@ -59,6 +60,7 @@ function CustomRoutes({}: CustomRoutesProps) {
             </Route>
 
             <Route path="/mui" element={<MUI />} />
+            <Route path="/mobx" element={<Mobx />} />
             <Route path="/dnd" element={<DndPg />} />
             <Route path="/canvas_path" element={<CanvasPath2D />} />
             <Route path="/svg_animation" element={<SvgAnimation />} />
