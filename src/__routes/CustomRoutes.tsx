@@ -2,6 +2,7 @@ import * as React from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router";
 
 import { ContextApp } from "../context/app/contextApp";
+import Antd from "../pages/antd/_main/Antd";
 import CanvasPath2D from "../pages/cavas_path2d/CanvasPath2D";
 import DndPg from "../pages/dnd/_main/DndPg";
 import HomeChild from "../pages/home/child/HomeChild";
@@ -60,6 +61,7 @@ function CustomRoutes({}: CustomRoutesProps) {
             </Route>
 
             <Route path="/mui" element={<MUI />} />
+            <Route path="/antd" element={<Antd />} />
             <Route path="/mobx" element={<Mobx />} />
             <Route path="/dnd" element={<DndPg />} />
             <Route path="/canvas_path" element={<CanvasPath2D />} />
