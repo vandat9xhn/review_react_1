@@ -5,6 +5,7 @@ import { ContextApp } from "../context/app/contextApp";
 import Antd from "../pages/antd/_main/Antd";
 import CanvasPath2D from "../pages/cavas_path2d/CanvasPath2D";
 import DndPg from "../pages/dnd/_main/DndPg";
+import Excel from "../pages/excel/_main/Excel";
 import HomeChild from "../pages/home/child/HomeChild";
 import HomeHasInput from "../pages/home/has_input/HomeHasInput";
 
@@ -64,8 +65,11 @@ function CustomRoutes({}: CustomRoutesProps) {
             <Route path="/antd" element={<Antd />} />
             <Route path="/mobx" element={<Mobx />} />
             <Route path="/dnd" element={<DndPg />} />
+
             <Route path="/canvas_path" element={<CanvasPath2D />} />
             <Route path="/svg_animation" element={<SvgAnimation />} />
+
+            <Route path="/excel" element={<Excel />} />
 
             <Route path="*" element={<Navigate to="/home/1" replace />} />
         </Routes>
