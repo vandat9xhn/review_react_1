@@ -29,6 +29,7 @@ function FromExcel({}: FromExcelProps) {
         reader.onload = () => {
             const wb = XLSX.read(reader.result);
             const ws = wb.Sheets[wb.SheetNames[0]];
+            
             const newDataSheet = XLSX.utils.sheet_to_json<dataSheetObjType>(ws);
             setDataSheet(newDataSheet);
         };

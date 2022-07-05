@@ -12,7 +12,7 @@ function Excel({}: ExcelProps) {
     return (
         <div>
             <div>
-                {/* <ToExcel /> */}
+                <ToExcel />
             </div>
 
             <div>

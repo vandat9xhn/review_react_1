@@ -19,10 +19,6 @@ const dataSheet: { name: string; age: number }[] = [
         name: "My",
         age: 18,
     },
-    {
-        name: "Trinh",
-        age: 21,
-    },
 ];
 
 //
