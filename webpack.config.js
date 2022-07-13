@@ -123,7 +123,7 @@ const config = {
             //
             {
                 loader: 'file-loader',
-                test: /\.(png|svg|jpe?g|gif|woff2?|eot|ttf|wav|mp3|mp4|ico)$/,
+                test: /\.(png|svg|jpe?g|gif|woff2?|eot|ttf|wav|mp3|mp4|ico|json)$/,
                 options: {
                     outputPath: 'static/images_icons',
                 },

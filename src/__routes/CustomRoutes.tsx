@@ -12,6 +12,7 @@ import HomeHasInput from "../pages/home/has_input/HomeHasInput";
 import Home from "../pages/home/_main/Home";
 import Mobx from "../pages/mobx/_main/Mobx";
 import MUI from "../pages/mui/_main/MUI";
+import MyReduxPersist from "../pages/redux_persist/_main/MyReduxPersist";
 import SvgAnimation from "../pages/svg_animation/SvgAnimation";
 
 //
@@ -68,8 +69,9 @@ function CustomRoutes({}: CustomRoutesProps) {
 
             <Route path="/canvas_path" element={<CanvasPath2D />} />
             <Route path="/svg_animation" element={<SvgAnimation />} />
-
             <Route path="/excel" element={<Excel />} />
+
+            <Route path="/persist" element={<MyReduxPersist />} />
 
             <Route path="*" element={<Navigate to="/home/1" replace />} />
         </Routes>

@@ -4,17 +4,20 @@ import * as ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 import { RecoilRoot } from "recoil";
 //
+import store, { persistor } from "./redux";
 import App from "./App";
-import store from "./redux";
 
 //
 ReactDOM.render(
     <Provider store={store}>
-        <RecoilRoot>
-            <App />
-        </RecoilRoot>
+        <PersistGate loading={null} persistor={persistor}>
+            <RecoilRoot>
+                <App />
+            </RecoilRoot>
+        </PersistGate>
     </Provider>,
     document.getElementById("root")
 );

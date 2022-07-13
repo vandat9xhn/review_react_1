@@ -2,6 +2,7 @@ import * as React from "react";
 // import { Link } from "react-router-dom";
 import { Outlet, useNavigate } from "react-router-dom";
 import AppLink from "../../../components/app_link/AppLink";
+import CircleControl from "../../../components/circle_control/_main/CircleControl";
 // import { Helmet } from "react-helmet";
 // //
 // import BrickAndBall from "../../../components/ball_and_brick/_main/BrickAndBall";
@@ -65,7 +66,7 @@ function Home({}: HomeProps) {
             </div> */}
 
             <div className="mt-4">
-                <Outlet />
+                {/* <Outlet /> */}
             </div>
 
             <div>
@@ -149,6 +150,10 @@ function Home({}: HomeProps) {
             {/* <div className="mt-4">
                 <ConcatVideos />
             </div> */}
+
+            <div className="mt-4">
+                <CircleControl />
+            </div>
 
             <div className="mt-4"></div>
         </div>

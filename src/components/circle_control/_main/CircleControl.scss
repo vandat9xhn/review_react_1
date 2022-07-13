@@ -1,0 +1,17 @@
+.CircleControl {
+    position: relative;
+    margin: auto;
+    width: 250px;
+    height: 250px;
+    background-color: black;
+}
+
+.CircleControl_in {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+
+    width: 40%;
+    height: 40%;
+}

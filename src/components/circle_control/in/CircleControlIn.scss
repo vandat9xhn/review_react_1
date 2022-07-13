@@ -1,0 +1,102 @@
+$w: 12;
+$w1: #{$w}px;
+$w2: #{$w * 2}px;
+
+// -----
+
+.CircleControlIn {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+.CircleControlIn_part {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.CircleControlIn_part_contain {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: all 250ms ease-in-out;
+}
+
+.CircleControlIn_ct {
+    width: calc(100% - $w2);
+    height: calc(100% - $w2);
+}
+.CircleControlIn_ct_contain {
+    position: relative;
+    transform: rotate(45deg);
+    border-radius: 50%;
+    overflow: hidden;
+
+    background-image: linear-gradient(
+        to right,
+        rgb(179, 174, 174),
+        transparent,
+        transparent
+    );
+}
+
+.CircleControlIn_pd {
+    width: calc(100% - $w1);
+    height: calc(100% - $w1);
+}
+
+.CircleControlIn_bd {
+    width: 100%;
+    height: 100%;
+}
+.CircleControlIn_bd_contain {
+    border: 5px solid rgb(230, 229, 229);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+// ----
+
+.CircleControlIn-left {
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.CircleControlIn-right {
+    transform: rotate(-180deg) scale(1.5);
+    .CircleControlIn_ct_contain {
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+            background-color: black;
+            animation: ct 500ms ease-in-out;
+        }
+    }
+}
+
+// -----
+
+@keyframes ct {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+    50% {
+        width: 90%;
+        height: 90%;
+    }
+    100% {
+        width: 0%;
+        height: 0%;
+    }
+}
