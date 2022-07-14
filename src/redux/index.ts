@@ -20,13 +20,13 @@ import { customCountMiddleWare } from "./count/middleware";
 
 import { countSlice } from "./count/slice";
 import myPersistReducer from "./my_persist/slice";
-// import { myQueryApi } from "./my_query/query_api";
+import { myQueryApi } from "./my_query/query_api";
 
 //
 const rootReducer = combineReducers({
     count_obj: countSlice.reducer,
     my_persist: myPersistReducer,
-    // query_api: myQueryApi.reducer,
+    [myQueryApi.reducerPath]: myQueryApi.reducer,
 });
 
 //
@@ -54,7 +54,8 @@ const store = configureStore({
                 ],
             },
         })
-            .prepend(customCountMiddleWare.middleware),
+            .prepend(customCountMiddleWare.middleware)
+            .concat(myQueryApi.middleware),
 });
 
 //

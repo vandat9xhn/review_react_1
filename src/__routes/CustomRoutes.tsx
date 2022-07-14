@@ -13,6 +13,7 @@ import Home from "../pages/home/_main/Home";
 import Mobx from "../pages/mobx/_main/Mobx";
 import MUI from "../pages/mui/_main/MUI";
 import MyReduxPersist from "../pages/redux_persist/_main/MyReduxPersist";
+import MyReduxQuery from "../pages/redux_query/_main/MyReduxQuery";
 import SvgAnimation from "../pages/svg_animation/SvgAnimation";
 
 //
@@ -72,6 +73,7 @@ function CustomRoutes({}: CustomRoutesProps) {
             <Route path="/excel" element={<Excel />} />
 
             <Route path="/persist" element={<MyReduxPersist />} />
+            <Route path="/redux-query" element={<MyReduxQuery />} />
 
             <Route path="*" element={<Navigate to="/home/1" replace />} />
         </Routes>

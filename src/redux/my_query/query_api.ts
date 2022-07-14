@@ -1,16 +1,39 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import city_obj from "../../../default/city/city.json";
+interface CityObj {
+    id: number;
+    user: {
+        id: number;
+        first_name: string;
+        last_name: string;
+        picture: string;
+        is_online: boolean;
+        created_time: string;
+    };
+    city: string;
+    street: string;
+    bg_color: string;
+    quote: string;
+    image: string;
+    created_time: string;
+    updated_time: string;
+    profile_model: number;
+}
 
 //
 export const myQueryApi = createApi({
     reducerPath: "city",
-    baseQuery: fetchBaseQuery({ baseUrl: city_obj }),
+    baseQuery: fetchBaseQuery({
+        baseUrl: "https://react-django-heroku.herokuapp.com/",
+    }),
     endpoints: (builder) => ({
-        getCity: builder.query<{ name: string }, string>({
-            query: (id) => ``,
+        requestGetCities: builder.mutation<CityObj[], string>({
+            query: () => "api/city/city-no-token-l/",
+        }),
+        getCities: builder.query<CityObj[], string>({
+            query: () => `api/city/city-no-token-l/`,
         }),
     }),
 });
 
-export const { useGetCityQuery } = myQueryApi;
+export const { useGetCitiesQuery, useRequestGetCitiesMutation } = myQueryApi;
