@@ -5,6 +5,7 @@ import { ContextApp } from "../context/app/contextApp";
 import Antd from "../pages/antd/_main/Antd";
 import CanvasPath2D from "../pages/cavas_path2d/CanvasPath2D";
 import DndPg from "../pages/dnd/_main/DndPg";
+import DrawShowPic from "../pages/draw_show_pic/_main/DrawShowPic";
 import Excel from "../pages/excel/_main/Excel";
 import HomeChild from "../pages/home/child/HomeChild";
 import HomeHasInput from "../pages/home/has_input/HomeHasInput";
@@ -12,6 +13,7 @@ import HomeHasInput from "../pages/home/has_input/HomeHasInput";
 import Home from "../pages/home/_main/Home";
 import Mobx from "../pages/mobx/_main/Mobx";
 import MUI from "../pages/mui/_main/MUI";
+import MyReactQuery from "../pages/react_query/_main/MyReactQuery";
 import MyReduxPersist from "../pages/redux_persist/_main/MyReduxPersist";
 import MyReduxQuery from "../pages/redux_query/_main/MyReduxQuery";
 import SvgAnimation from "../pages/svg_animation/SvgAnimation";
@@ -70,10 +72,12 @@ function CustomRoutes({}: CustomRoutesProps) {
 
             <Route path="/canvas_path" element={<CanvasPath2D />} />
             <Route path="/svg_animation" element={<SvgAnimation />} />
+            <Route path="/draw-show-pic" element={<DrawShowPic />} />
             <Route path="/excel" element={<Excel />} />
 
             <Route path="/persist" element={<MyReduxPersist />} />
             <Route path="/redux-query" element={<MyReduxQuery />} />
+            <Route path="/react-query" element={<MyReactQuery />} />
 
             <Route path="*" element={<Navigate to="/home/1" replace />} />
         </Routes>

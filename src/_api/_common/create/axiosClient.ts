@@ -1,12 +1,21 @@
 import axios from "axios";
 
 //
-const csrftoken = () =>
-    document.cookie &&
-    document.cookie
+const csrftoken = () => {
+    if (!document.cookie) {
+        return "";
+    }
+
+    const csrf = document.cookie
         .split(";")
-        .filter((str) => str.startsWith("csrftoken="))[0]
-        .slice(10);
+        .filter((str) => str.startsWith("csrftoken="))[0];
+
+    if (csrf) {
+        return csrf.slice(10);
+    }
+
+    return "";
+};
 
 //
 const baseURL = "";

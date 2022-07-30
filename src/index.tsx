@@ -9,13 +9,18 @@ import { RecoilRoot } from "recoil";
 //
 import store, { persistor } from "./redux";
 import App from "./App";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 //
 ReactDOM.render(
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
             <RecoilRoot>
-                <App />
+                <QueryClientProvider client={queryClient}>
+                    <App />
+                </QueryClientProvider>
             </RecoilRoot>
         </PersistGate>
     </Provider>,

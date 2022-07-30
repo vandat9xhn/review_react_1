@@ -35,6 +35,10 @@ function Header({}: HeaderProps) {
             <div>
                 <Link to={"/"}>Home</Link>
             </div>
+
+            <div>
+                <Link to={"/react-query"}>React Query</Link>
+            </div>
         </div>
     );
 }
