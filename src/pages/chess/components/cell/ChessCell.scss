@@ -1,0 +1,45 @@
+//
+%after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+//
+
+.ChessCell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+}
+.ChessCell-black {
+    background-color: gray;
+}
+.ChessCell-active {
+    &::after {
+        @extend %after;
+        background-color: rgba(0, 253, 0, 0.25);
+    }
+}
+.ChessCell-can_in {
+    cursor: pointer;
+    &::after {
+        @extend %after;
+        background-color: rgba(99, 230, 253, 0.25);
+    }
+}
+.ChessCell-can_kill {
+    cursor: pointer;
+    &::after {
+        @extend %after;
+        background-color: rgba(253, 99, 99, 0.25);
+    }
+}

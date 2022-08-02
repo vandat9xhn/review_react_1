@@ -4,6 +4,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router";
 import { ContextApp } from "../context/app/contextApp";
 import Antd from "../pages/antd/_main/Antd";
 import CanvasPath2D from "../pages/cavas_path2d/CanvasPath2D";
+import Chess from "../pages/chess/_main/Chess";
 import DndPg from "../pages/dnd/_main/DndPg";
 import DrawShowPic from "../pages/draw_show_pic/_main/DrawShowPic";
 import Excel from "../pages/excel/_main/Excel";
@@ -74,6 +75,7 @@ function CustomRoutes({}: CustomRoutesProps) {
             <Route path="/svg_animation" element={<SvgAnimation />} />
             <Route path="/draw-show-pic" element={<DrawShowPic />} />
             <Route path="/excel" element={<Excel />} />
+            <Route path="/chess" element={<Chess />} />
 
             <Route path="/persist" element={<MyReduxPersist />} />
             <Route path="/redux-query" element={<MyReduxQuery />} />
