@@ -28,6 +28,7 @@ export function useChess() {
 
     const ref_promote_pawn =
         useRef<{ x: number; y: number; cell_obj: CellObj }>(null);
+    const ref_winner = useRef<"black" | "white" | "">("");
 
     //
     const forceUpdate = useForceUpdate();
@@ -36,6 +37,7 @@ export function useChess() {
 
     const startGame = (name1: string, name2: string) => {
         ref_cell_arr.current = getInitialCells();
+        ref_winner.current = "";
         setPlayer1({ name: name1, is_black: false });
         setPlayer2({ name: name2, is_black: true });
     };
@@ -71,42 +73,55 @@ export function useChess() {
         }
 
         // move
-        const next_cell = ref_cell_arr.current[x][y];
+        const { can_kill, can_move_in, is_pieces_black, pieces_name } =
+            ref_cell_arr.current[x][y];
 
-        if (next_cell.can_move_in || next_cell.can_kill) {
-            ref_cell_arr.current[x][y] = {
-                ...ref_cell_arr.current[ref_cur_cell.current.x][
-                    ref_cur_cell.current.y
-                ],
-            };
-            ref_cell_arr.current[ref_cur_cell.current.x][
-                ref_cur_cell.current.y
-            ] = {};
-            ref_cur_cell.current = { x: -1, y: -1 };
-            ref_black_player.current = !ref_black_player.current;
-            ref_cell_arr.current.forEach((row) => {
-                row.forEach((item) => {
-                    item.can_move_in = false;
-                    item.can_kill = false;
-                });
-            });
-
-            if (
-                ref_cell_arr.current[x][y].pieces_name === "pawn" &&
-                (x === 7 || x === 1)
-            ) {
-                ref_promote_pawn.current = {
-                    x: x,
-                    y: y,
-                    cell_obj: ref_cell_arr.current[x][y],
-                };
+        if (can_move_in || can_kill) {
+            if (can_kill) {
+                if (pieces_name === "king") {
+                    ref_winner.current = is_pieces_black ? "white" : "black";
+                }
             }
-
-            forceUpdate();
-
+            moveInAndKill(params);
             return;
         }
 
+        // ----
+
+        whenMoveDone();
+        forceUpdate();
+    };
+
+    //
+    const moveInAndKill = (params: Parameters<handleClickCellType>[0]) => {
+        const { x, y, cell_obj } = params;
+
+        ref_cell_arr.current[x][y] = {
+            ...ref_cell_arr.current[ref_cur_cell.current.x][
+                ref_cur_cell.current.y
+            ],
+        };
+        ref_cell_arr.current[ref_cur_cell.current.x][ref_cur_cell.current.y] =
+            {};
+        ref_black_player.current = !ref_black_player.current;
+        whenMoveDone();
+
+        if (
+            ref_cell_arr.current[x][y].pieces_name === "pawn" &&
+            (x === 7 || x === 1)
+        ) {
+            ref_promote_pawn.current = {
+                x: x,
+                y: y,
+                cell_obj: ref_cell_arr.current[x][y],
+            };
+        }
+
+        forceUpdate();
+    };
+
+    //
+    const whenMoveDone = () => {
         ref_cell_arr.current.forEach((row) => {
             row.forEach((item) => {
                 item.can_move_in = false;
@@ -114,7 +129,6 @@ export function useChess() {
             });
         });
         ref_cur_cell.current = { x: -1, y: -1 };
-        forceUpdate();
     };
 
     //
@@ -143,6 +157,7 @@ export function useChess() {
         ref_cur_cell,
         ref_cell_arr,
         ref_promote_pawn,
+        ref_winner,
 
         startGame,
         handleClickCell,

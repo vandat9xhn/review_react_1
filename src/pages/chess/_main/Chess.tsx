@@ -7,6 +7,7 @@ import ChessCell from "../components/cell/ChessCell";
 import "./Chess.scss";
 import Portal from "../../../components/portal/Portal";
 import PromotePawn from "../components/promote_pawn/PromotePawn";
+import ChessWinner from "../components/winner/ChessWinner";
 
 //
 export interface ChessProps {}
@@ -22,6 +23,7 @@ function Chess({}: ChessProps) {
         ref_cell_arr,
         ref_cur_cell,
         ref_promote_pawn,
+        ref_winner,
 
         startGame,
         handleClickCell,
@@ -99,16 +101,26 @@ function Chess({}: ChessProps) {
                 {player2.name}
             </div>
 
-            {ref_promote_pawn.current && (
-                <Portal>
-                    <PromotePawn
-                        is_black={
-                            ref_promote_pawn.current.cell_obj.is_pieces_black
-                        }
-                        handlePromotePawn={handlePromotePawn}
-                    />
-                </Portal>
-            )}
+            <Portal>
+                <React.Fragment>
+                    {ref_promote_pawn.current && (
+                        <PromotePawn
+                            is_black={
+                                ref_promote_pawn.current.cell_obj
+                                    .is_pieces_black
+                            }
+                            handlePromotePawn={handlePromotePawn}
+                        />
+                    )}
+
+                    {ref_winner.current && (
+                        <ChessWinner
+                            winner={ref_winner.current}
+                            handleReset={handleStart}
+                        />
+                    )}
+                </React.Fragment>
+            </Portal>
         </div>
     );
 }
