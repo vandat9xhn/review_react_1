@@ -2,6 +2,7 @@ import * as React from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router";
 
 import { ContextApp } from "../context/app/contextApp";
+import AnimateDeletePg from "../pages/aniamte_delete/_main/AnimateDeletePg";
 import Antd from "../pages/antd/_main/Antd";
 import CanvasPath2D from "../pages/cavas_path2d/CanvasPath2D";
 import Chess from "../pages/chess/_main/Chess";
@@ -70,6 +71,7 @@ function CustomRoutes({}: CustomRoutesProps) {
             <Route path="/antd" element={<Antd />} />
             <Route path="/mobx" element={<Mobx />} />
             <Route path="/dnd" element={<DndPg />} />
+            <Route path="/animate-del" element={<AnimateDeletePg />} />
 
             <Route path="/canvas_path" element={<CanvasPath2D />} />
             <Route path="/svg_animation" element={<SvgAnimation />} />
